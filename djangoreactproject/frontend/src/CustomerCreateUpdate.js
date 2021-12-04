@@ -4,8 +4,6 @@ import { useParams } from 'react-router-dom';
 
 const customersService = new CustomersService();
 
-
-
 export const withRouter = (Component) => {
   const Wrapper = (props) => {
     const history = useParams();
