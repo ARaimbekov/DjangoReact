@@ -28,8 +28,8 @@ const BaseLayout = () => {
         <div className="content">
           <Routes>
             <Route path="/" exact element={<CustomersList/>}/>
-            <Route path="/customer/:pk" element={<CustomerCreateUpdate/>}/>
             <Route path="/customer/" exact element={<CustomerCreateUpdate/>}/>
+            <Route path="/customer/:pk" element={<CustomerCreateUpdate/>}/>
           </Routes>
 
 
