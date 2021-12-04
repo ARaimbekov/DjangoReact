@@ -23,9 +23,9 @@ const BaseLayout = () => (
 
     <div className="content">
       <Routes>
-        <Route path="/" exact component={CustomersList} />
-        <Route path="/customer/:pk"  component={CustomerCreateUpdate} />
-        <Route path="/customer/" exact component={CustomerCreateUpdate} />
+        <Route path="/" exact element={CustomersList} />
+        <Route path="/customer/:pk"  element={CustomerCreateUpdate} />
+        <Route path="/customer/" exact element={CustomerCreateUpdate} />
       </Routes>
 
 
