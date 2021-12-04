@@ -34,7 +34,7 @@ ALLOWED_HOSTS = ['*']
 CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = (
-        'https://10.10.10.207:3000',
+        'http://10.10.10.207:3000',
 )
 
 INSTALLED_APPS = [
