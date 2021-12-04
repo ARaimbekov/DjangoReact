@@ -79,7 +79,7 @@ class CustomerCreateUpdate extends Component {
         });
       }
       handleSubmit(event) {
-        const { match: { params } } = this.props;
+        const { history:params } = this.props;
 
         if(params && params.pk){
           this.handleUpdate(params.pk);
