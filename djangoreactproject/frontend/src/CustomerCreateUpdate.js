@@ -3,6 +3,23 @@ import CustomersService from './CustomersService';
 
 const customersService = new CustomersService();
 
+import { useHistory } from 'react-router-dom';
+
+export const withRouter = (Component) => {
+  const Wrapper = (props) => {
+    const history = useHistory();
+
+    return (
+      <Component
+        history={history}
+        {...props}
+        />
+    );
+  };
+
+  return Wrapper;
+};
+
 class CustomerCreateUpdate extends Component {
     constructor(props) {
         super(props);
@@ -11,7 +28,8 @@ class CustomerCreateUpdate extends Component {
       }
 
       componentDidMount(){
-        const { match: { params } } = this.props;
+        const { match: { params } , history } = this.props;
+        console.log(history)
         if(params && params.pk)
         {
           customersService.getCustomer(params.pk).then((c)=>{
@@ -109,4 +127,4 @@ class CustomerCreateUpdate extends Component {
       }
 }
 
-export default CustomerCreateUpdate;
+export default withRouter(CustomerCreateUpdate)
