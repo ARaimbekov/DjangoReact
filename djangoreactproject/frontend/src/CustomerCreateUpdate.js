@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CustomersService from './CustomersService';
-import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const customersService = new CustomersService();
 
@@ -8,7 +8,7 @@ const customersService = new CustomersService();
 
 export const withRouter = (Component) => {
   const Wrapper = (props) => {
-    const history = useNavigate();
+    const history = useParams();
 
     return (
       <Component
@@ -29,8 +29,8 @@ class CustomerCreateUpdate extends Component {
       }
 
       componentDidMount(){
-        const { match: { params } , history } = this.props;
-        console.log(history)
+        const { history:params } = this.props;
+        console.log(params)
         if(params && params.pk)
         {
           customersService.getCustomer(params.pk).then((c)=>{
