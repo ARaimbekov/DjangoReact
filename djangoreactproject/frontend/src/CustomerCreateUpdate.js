@@ -3,11 +3,11 @@ import CustomersService from './CustomersService';
 
 const customersService = new CustomersService();
 
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const withRouter = (Component) => {
   const Wrapper = (props) => {
-    const history = useHistory();
+    const history = useNavigate();
 
     return (
       <Component
